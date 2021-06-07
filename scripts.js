@@ -54,6 +54,8 @@ function init () {
       ypos += -10;
       rocket.style.top = `${ypos}px`;
       spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) + 10000;
+      shuttleBackground.style.backgroundColor = "blue";
+      flightStatus.innerHTML = "Shuttle in flight.";
     }
   });
   down.addEventListener("click", function() {
@@ -61,6 +63,10 @@ function init () {
       ypos += 10;
       rocket.style.top = `${ypos}px`;
       spaceShuttleHeight.innerHTML = Number(spaceShuttleHeight.innerHTML) - 10000;
+      if (Number(spaceShuttleHeight.innerHTML) === 0) {
+        shuttleBackground.style.backgroundColor = "";
+        flightStatus.innerHTML = "The shuttle has landed.";
+      }
     }
   });
   right.addEventListener("click", function() {
