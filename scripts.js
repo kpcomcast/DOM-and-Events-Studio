@@ -70,13 +70,13 @@ function init () {
     }
   });
   right.addEventListener("click", function() {
-    if (xpos > -250) {
+    if (xpos > (-(Number(shuttleBackground.offsetWidth) / 2) + 25)) {
       xpos += -10;
       rocket.style.right = `${xpos}px`;
     }
   });
   left.addEventListener("click", function() {
-    if (xpos < 250) {
+    if (xpos < (Number(shuttleBackground.offsetWidth) / 2) - 25) {
       xpos += 10;
       rocket.style.right = `${xpos}px`;
     }
