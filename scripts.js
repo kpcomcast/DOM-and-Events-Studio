@@ -12,6 +12,7 @@ function init () {
   const right = document.getElementById("right");
   const left = document.getElementById("left");
   const rocket = document.getElementById("rocket");
+  const reset = document.getElementById("reset");
 
   let xpos = 0;
   let ypos = 250;
@@ -80,6 +81,15 @@ function init () {
       xpos += 10;
       rocket.style.right = `${xpos}px`;
     }
+  });
+
+  reset.addEventListener("click", function() {
+    rocket.style ="position: relative; top: 250px;";
+    shuttleBackground.style.backgroundColor = "";
+    flightStatus.innerHTML = "Space shuttle ready for takeoff";
+    spaceShuttleHeight.innerHTML = 0;
+    xpos = 0;
+    ypos = 250;
   });
 
   console.log("loaded scripts.js");
